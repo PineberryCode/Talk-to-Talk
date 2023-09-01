@@ -6,7 +6,7 @@ Clone the repo:
 ```
 ### Advice
 If you want to communicate with other users of your own LAN. Please, set up this line and add your Laptop, PC, or Server IP Address.<br>
-For example, Your laptop IP Address:<br><br>
+Suppose this is your server IP Address ***192.168.100.7***:<br><br>
 **Server.java** file
 ```JAVA
 server = new ServerSocket(PORT,0,InetAddress.getByName("192.168.100.7"));
