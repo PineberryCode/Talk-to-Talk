@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class Server implements Runnable {
     @Override
     public void run() {
         try {
-            server = new ServerSocket(PORT);
+            server = new ServerSocket(PORT,0,InetAddress.getByName("127.0.0.1")); // <-- Add laptop || PC || Server IP Address or localhost.
             pool = Executors.newCachedThreadPool();
             while (!done) {
                 Socket user = server.accept();
@@ -48,13 +49,15 @@ public class Server implements Runnable {
         done = true;
         try {
             pool.shutdown();
-            if (!server.isClosed()) {
+            if (server != null && !server.isClosed()) {
                 server.close();
             }
             for (ConnectionHandler connectionHandler : userConnections) {
-                connectionHandler.shutdown();
+                if (connectionHandler != null) {
+                    connectionHandler.shutdown();
+                }
             }
-        } catch (IOException e) {}
+        } catch (IOException e) {e.printStackTrace();}
     }
 
     public class ConnectionHandler implements Runnable {
@@ -97,6 +100,7 @@ public class Server implements Runnable {
                 }
             } catch (IOException e) {
                 shutdown();
+                e.printStackTrace();
             }
         }
 
@@ -111,7 +115,7 @@ public class Server implements Runnable {
                 if (!user.isClosed()) {
                     user.close();
                 }
-            } catch (IOException e) {}
+            } catch (IOException e) {e.printStackTrace();}
         }
     }
     public static void main(String[] args) {
