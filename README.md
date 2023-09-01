@@ -4,10 +4,23 @@ Clone the repo:
 ```
 
 ```
+### Advice
+If you want to communicate with other users of your own LAN. Please, set up this line and add your Laptop, PC, or Server IP Address.<br>
+For example, Your laptop IP Address:<br><br>
+**Server.java** file
+```JAVA
+server = new ServerSocket(PORT,0,InetAddress.getByName("192.168.100.7"));
+```
+**User.java** file
+```JAVA
+user = new Socket("192.168.100.7", 5000);
+```
+Once you have done that setting up. Now you can communicate with other users of your LAN.
 
-While the server is on you will communicate with other users and the **user.java** not throw an error.
+### Warning
+While the server is on you will communicate with other users and the **user.java** not throw an error. Please, try to activate it first (Server).
 
-Credits: [NeuralNine](https://www.youtube.com/@NeuralNine) [NeuralNine Repo Video](https://www.youtube.com/watch?v=hIc_9Wbn704) <br>
-Note: 
-- I looked for his repo but I couldn't find it, hence the credit. (September 01, 2023)
+Note:<br>
+Credits: <br>[NeuralNine Channel](https://www.youtube.com/@NeuralNine) <br>[Video](https://www.youtube.com/watch?v=hIc_9Wbn704)
+- I looked for his repo in Github but I couldn't find it, hence the credit (September 01, 2023). <br>
 - I did some settings.
