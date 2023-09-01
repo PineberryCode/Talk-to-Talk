@@ -47,14 +47,12 @@ public class User implements Runnable {
     class InputHandler implements Runnable {
 
         @Override
-        public void run() { // Asking
-            try {
-                BufferedReader inReader = new BufferedReader(new InputStreamReader(System.in));
+        public void run() {
+            try (BufferedReader inReader = new BufferedReader(new InputStreamReader(System.in))) {
                 while (!done) {
                     String msg = inReader.readLine();
                     if (msg.equals("--quit")) {
                         out.println(msg);
-                        inReader.close();
                         shutdown();
                     } else {
                         out.println(msg);
