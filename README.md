@@ -11,6 +11,7 @@ Suppose this is your server IP Address ***192.168.100.7***:<br><br>
 ```JAVA
 server = new ServerSocket(PORT,0,InetAddress.getByName("192.168.100.7"));
 ```
+Afterward, all users will have to connect to that IP.<br><br>
 **User.java** file
 ```JAVA
 user = new Socket("192.168.100.7", 5000);
