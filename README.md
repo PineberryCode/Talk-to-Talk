@@ -1,9 +1,6 @@
 # Talk-to-Talk
 
-Clone the repo:
-```
-https://github.com/PineberryCode/Talk-to-Talk.git
-```
+
 ### Advice
 If you want to communicate with other users of your own LAN. Please, set up this line and add your Laptop, PC, or Server IP Address.<br>
 Suppose this is your server IP Address ***192.168.100.7***:<br><br>
