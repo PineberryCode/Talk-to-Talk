@@ -6,7 +6,7 @@ If you want to communicate with other users of your LAN. Please set up this line
 Suppose this is your server IP Address ***192.168.100.7***:<br><br>
 **Server.java** file:
 ```JAVA
-server = new ServerSocket(PORT,0,InetAddress.getByName("192.168.100.7"));
+server = new ServerSocket(5000,0,InetAddress.getByName("192.168.100.7"));
 ```
 Subsequently, all users will have to connect to that IP.<br><br>
 **User.java** file:
