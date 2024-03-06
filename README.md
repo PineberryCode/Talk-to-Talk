@@ -15,6 +15,9 @@ user = new Socket("192.168.100.7", 5000);
 ```
 After you have completed that setup, you can now communicate with other users on your LAN.
 
+> [!NOTE]
+> Enable port of your preference with **ufw**
+
 ### Warning
 While the server is turned on, you will communicate with other users, and the **user.java** will not throw an error. Please try to activate it first (Server).
 
